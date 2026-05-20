@@ -5,13 +5,13 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 @UseGuards(JwtAuthGuard)
 @Controller('msg')
 export class MsgController {
-  constructor(private readonly smsService: SmsService) {}
+  constructor(private readonly smsService: SmsService) { }
 
   @Post()
   async sendMsgAddLitr(@Body() body: any) {
     return this.smsService.sendMsgAddLitr(body);
   }
-
+  // віів
   @Post('module-restart')
   async sendRestartModule(@Body() body: any) {
     return this.smsService.sendRestartModule(body);
@@ -61,7 +61,7 @@ export class MsgController {
 @UseGuards(JwtAuthGuard)
 @Controller('sms')
 export class SmsController {
-  constructor(private readonly smsService: SmsService) {}
+  constructor(private readonly smsService: SmsService) { }
 
   @Get()
   async getAllTodaySms() {
